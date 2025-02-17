@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Test100.Controllers;
 using Test100.Models;
+using Test100.Pages.Admin;
 
 namespace Test100.Pages
 {
@@ -46,11 +47,14 @@ namespace Test100.Pages
             {
                 switch (user.RoleId)
                 {
-                    // Роль
+                    // Роль пользователя
                     case 1:
+
                         // Код для перехода на следующую страницу
                         break;
+                    // Роль администратора
                     case 2:
+                        GlobalVariables.Frame.Navigate(new AdminMainPage());
                         // Код для перехода на следующую страницу
                         break;
                     default:

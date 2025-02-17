@@ -9,6 +9,10 @@
       Title="AdminMainPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="30*"/>
+        </Grid.ColumnDefinitions>
+
     </Grid>
 </Page>
