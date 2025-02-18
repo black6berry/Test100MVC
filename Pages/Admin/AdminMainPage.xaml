@@ -14,5 +14,75 @@
             <ColumnDefinition Width="30*"/>
         </Grid.ColumnDefinitions>
 
+        
+        <StackPanel
+            
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalAlignment="Right" 
+            Width="200"
+            VerticalAlignment="Bottom"
+            
+            
+            >
+            <Button
+                x:Name="BtnAdd"
+                Content="Добавить"
+                Click="BtnAdd_Click" 
+                Height="30"
+                />
+            <Button
+                 x:Name="BtnDelete"
+                 Content="Удалить"
+                 Click="BtnDelete_Click"
+                Height="30"
+            />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="1"
+            Height="500"
+            >
+            <DataGrid
+                x:Name="DgUsers"
+                AutoGenerateColumns="False"
+                CanUserAddRows="False"
+                
+                >
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                        Header="Id"
+                        Width="*"
+                        Binding="{Binding Id}"/>
+
+                    <DataGridTextColumn 
+                    Header="Firstname"
+                    Width="*"
+                    Binding="{Binding Firstname}"/>
+
+                    <DataGridTextColumn 
+                        Header="Lastname"
+                        Width="*"
+                        Binding="{Binding Lastname}"/>
+                    
+                    <DataGridTextColumn 
+                        Header="Patronymic"
+                        Width="*"
+                        Binding="{Binding Patronymic}"/>
+                    
+                    <DataGridTextColumn 
+                        Header="Phone"
+                        Width="*"
+                        Binding="{Binding Phone}"/>
+
+                    <DataGridTextColumn 
+                        Header="RoleUser"
+                        Width="*"
+                        Binding="{Binding Role.Name}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Page>

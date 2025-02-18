@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,9 +32,6 @@ namespace Test100.Pages
         {
             InitializeComponent();
             _authentificationController = new AuthentificationController();
-                
-
-            //var user = _authentificationController.FindUserByPhonePassword();
         }
 
         private void BtnAutentification_Click(object sender, RoutedEventArgs e)
@@ -41,19 +39,21 @@ namespace Test100.Pages
             _login = TxbPhone.Text;
             _password = PsbPass.Password;
 
-            var user = DbConnector.conn.Users.FirstOrDefault(x => x.Phone == _login && x.Password == _password);
+            //var user2 = _authentificationController.FindUserByPhonePassword(_login, _password);
+
+            var user = DbConnector.conn.Users.Include(t => t.Role).FirstOrDefault(x => x.Phone == _login && x.Password == _password);
 
             if (user != null) 
             {
-                switch (user.RoleId)
+                switch (user.Role.Name)
                 {
                     // Роль пользователя
-                    case 1:
+                    case "Пользователь":
 
                         // Код для перехода на следующую страницу
                         break;
                     // Роль администратора
-                    case 2:
+                    case "Админ":
                         GlobalVariables.Frame.Navigate(new AdminMainPage());
                         // Код для перехода на следующую страницу
                         break;
@@ -61,7 +61,7 @@ namespace Test100.Pages
 
                         break;
                 }
-                MessageBox.Show($"Здравствуйте {user.Firstname}\nВы вошли как {user.RoleId}");
+                MessageBox.Show($"Здравствуйте {user.Firstname}\nВы вошли как {user.Role.Name}");
             }
             else
             {

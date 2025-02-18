@@ -20,14 +20,16 @@
             <GroupBox Header="Введите логин">
                 <TextBox 
                     x:Name="TxbPhone"
-                    Height="20"/>
+                    Height="20"
+                    Text="89087654321"/>
             </GroupBox>
             <GroupBox Header="Введите пароль">
                 <PasswordBox 
                     x:Name="PsbPass"
                     Height="20"
                     PasswordChar="*"
-                    Margin="0 10 0 0"/>
+                    Margin="0 10 0 0"
+                    Password="2"/>
             </GroupBox>
             <Button 
                 x:Name="BtnAutentification"
