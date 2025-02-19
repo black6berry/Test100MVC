@@ -14,30 +14,59 @@
             <ColumnDefinition Width="30*"/>
         </Grid.ColumnDefinitions>
 
-        
-        <StackPanel
-            
-            Grid.Row="0"
-            Grid.Column="0"
-            HorizontalAlignment="Right" 
-            Width="200"
-            VerticalAlignment="Bottom"
-            
-            
+        <StackPanel 
+            Orientation="Vertical"
             >
-            <Button
-                x:Name="BtnAdd"
-                Content="Добавить"
-                Click="BtnAdd_Click" 
-                Height="30"
-                />
-            <Button
-                 x:Name="BtnDelete"
-                 Content="Удалить"
-                 Click="BtnDelete_Click"
-                Height="30"
-            />
+
+            <StackPanel 
+                VerticalAlignment="Top">
+                <GroupBox Header="Firstname">
+                    <TextBox
+                        Name="TxbFirstname"
+                        />
+                </GroupBox>
+                
+                <GroupBox Header="Lastname">
+                    <TextBox
+                        Name="TxbLastname"
+                           />
+                </GroupBox>
+                <GroupBox Header="Patronymic">
+                    <TextBox
+                        Name="TxbPatronymic"
+                           />
+                </GroupBox>
+                <GroupBox Header="Phone">
+                    <TextBox
+                        Name="TxbPhone"
+                           />
+                </GroupBox>
+                <ComboBox 
+                    Name="CmbRole"
+                        />
+
+            </StackPanel>
+
+            <StackPanel 
+                
+                VerticalAlignment="Bottom">
+                
+
+                <Button
+                    x:Name="BtnAdd"
+                    Content="Добавить"
+                    Click="BtnAdd_Click" 
+                    Height="30"
+                        />
+                <Button
+                     x:Name="BtnDelete"
+                     Content="Удалить"
+                     Click="BtnDelete_Click"
+                    Height="30"
+                    />
+            </StackPanel>
         </StackPanel>
+        
 
         <StackPanel
             Grid.Row="0"

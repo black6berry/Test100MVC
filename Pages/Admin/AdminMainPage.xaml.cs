@@ -33,7 +33,10 @@ namespace Test100.Pages.Admin
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            Models.User user = new Models.User()
+            {
 
+            };
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
