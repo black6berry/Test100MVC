@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Test100.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" 
+      d:DesignWidth="800"
       Title="">
 
     <Grid Background="#FFFFFF">
@@ -13,10 +14,12 @@
             VerticalAlignment="Center"
             Width="200"
             >
+            <Image Source="/Resources/logo.png" Height="200" Width="200" />
             <Label 
                 Content="Авторизация"
                 FontSize="16"
-                HorizontalAlignment="Center"/>
+                HorizontalAlignment="Center"
+                Margin="0 20 0 0"/>
             <GroupBox Header="Введите логин">
                 <TextBox 
                     x:Name="TxbPhone"
